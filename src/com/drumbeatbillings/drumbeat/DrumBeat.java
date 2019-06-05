@@ -30,7 +30,7 @@ public class DrumBeat {
             e.printStackTrace(pw);
         }
         String error = e.getMessage();
-        if (error == null) error = "An error has occurred";
+        if (error == null) error = "An error has occurred.";
         JPanel err = new JPanel();
         err.setLayout(new BoxLayout(err, BoxLayout.Y_AXIS));
         JTextField textField = new JTextField(error);
