@@ -40,7 +40,7 @@ public class DrumBeat {
         textField.setBorder(null);
         err.add(textField);
 
-        JTextField report = new JTextField("Please send the following info to support@drumbeatbillings.com or report it on our github.");
+        JTextField report = new JTextField("Please report the following to our github.");
         report.setMinimumSize(new Dimension(0, 20));
         report.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
         report.setEditable(false);
