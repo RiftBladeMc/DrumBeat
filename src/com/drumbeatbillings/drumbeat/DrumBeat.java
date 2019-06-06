@@ -24,7 +24,7 @@ public class DrumBeat {
         instance = new DrumBeat();
     }
 
-    public void handleError(Exception e) {
+    public static void handleError(Exception e) {
         StringWriter sw = new StringWriter();
         try (PrintWriter pw = new PrintWriter(sw)) {
             e.printStackTrace(pw);
@@ -58,14 +58,9 @@ public class DrumBeat {
     }
 
     private DrumBeat() {
-        try {
-            Objects.requireNonNull(null);
-        } catch (NullPointerException npe) {
-            handleError(npe);
-        }
     }
 
-    public boolean isPro() {
+    public static boolean isPro() {
         return false;
     }
 }

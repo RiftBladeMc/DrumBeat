@@ -1,4 +1,4 @@
-package com.drumbeatbillings.drumbeat;
+package com.drumbeatbillings.drumbeat.datatypes;
 
 import java.io.File;
 import java.sql.Connection;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database implements AutoCloseable {
-    private final Connection connection;
+    final Connection connection;
     public Database(File file) throws SQLException {
         connection = DriverManager.getConnection("jdbc:sqlite:" + (file.isDirectory() ? file.getAbsolutePath() + File.separatorChar + "drumbeat.db" : file.getAbsolutePath()));
     }
@@ -22,7 +22,7 @@ public class Database implements AutoCloseable {
 
     private void init() throws SQLException {
         try (Statement stmt = connection.createStatement()) {
-            stmt.execute("CREATE TABLE DrumBeat ('id' TINYINT UNSIGNED PRIMARY KEY AUTOINCREMENT, 'first' TEXT NOT NULL, 'last' TEXT NOT NULL, 'company' TEXT, 'email' TEXT, 'address' TEXT, 'phone' TEXT);");
+            stmt.execute("CREATE TABLE DrumBeat ('id' TINYINT UNSIGNED PRIMARY KEY AUTOINCREMENT, 'first' TEXT, 'last' TEXT, 'company' TEXT, 'email' TEXT, 'address' TEXT, 'phone' TEXT);");
         }
     }
 
