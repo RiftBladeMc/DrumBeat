@@ -11,5 +11,6 @@
     <orderEntry type="library" name="sqlite" level="project" />
     <orderEntry type="library" name="mysql" level="project" />
     <orderEntry type="library" name="swingx" level="project" />
+    <orderEntry type="library" name="sqlite" level="project" />
   </component>
 </module>
