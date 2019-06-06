@@ -12,7 +12,15 @@ public class Slip {
         this.client = client;
     }
 
-    public String getDate() {
+    public String getDateAsString() {
         return DateFormat.getDateInstance(DateFormat.LONG).format(new Date(date));
+    }
+
+    public long getDateAsLong() {
+        return date;
+    }
+
+    public Date getDate() {
+        return new Date(date);
     }
 }
