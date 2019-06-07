@@ -3,10 +3,13 @@ package com.drumbeatbillings.drumbeat;
 import javafx.scene.control.Accordion;
 import org.jdesktop.swingx.JXTaskPane;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -19,9 +22,15 @@ public class DrumBeat {
     public static DrumBeat getInstance() {
         return instance;
     }
-
+    public static Runnable button = null;
     public static void main(String[] args) {
         instance = new DrumBeat();
+        try {
+            ImageIO.write(Button.test(), "png", new File("C:\\Users\\ericr\\Desktop\\img.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void handleError(Exception e) {

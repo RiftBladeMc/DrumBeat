@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 public class Slip {
+    private long starttime;
     private long date;
     private int time;
     private final Client client;
@@ -20,7 +21,12 @@ public class Slip {
         return date;
     }
 
-    public Date getDate() {
-        return new Date(date);
+    public void start() {
+        starttime = System.currentTimeMillis();
+    }
+
+    public void stop() {
+        time += System.currentTimeMillis()-starttime;
+        starttime = 0;
     }
 }
