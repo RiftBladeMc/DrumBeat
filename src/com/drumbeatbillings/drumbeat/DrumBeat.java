@@ -23,17 +23,12 @@ public class DrumBeat {
         return instance;
     }
     public static Runnable button = null;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         instance = new DrumBeat();
-        try {
-            ImageIO.write(Button.test(), "png", new File("C:\\Users\\ericr\\Desktop\\img.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        Button.getButton();
     }
 
-    public static void handleError(Exception e) {
+    public static void handleError(Throwable e) {
         StringWriter sw = new StringWriter();
         try (PrintWriter pw = new PrintWriter(sw)) {
             e.printStackTrace(pw);
